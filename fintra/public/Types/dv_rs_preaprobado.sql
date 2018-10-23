@@ -1,0 +1,45 @@
+-- Type: dv_rs_preaprobado
+
+-- DROP TYPE dv_rs_preaprobado;
+
+CREATE TYPE dv_rs_preaprobado AS
+   (id_unidad_negocio integer,
+    periodo integer,
+    negasoc character varying,
+    cedula_deudor character varying,
+    nombre_deudor character varying,
+    telefono character varying,
+    celular character varying,
+    direccion character varying,
+    barrio character varying,
+    ciudad character varying,
+    email character varying,
+    cedula_codeudor character varying,
+    nombre_codeudor character varying,
+    telefono_codeudor character varying,
+    celular_codeudor character varying,
+    cuotas character varying,
+    id_convenio character varying,
+    afiliado character varying,
+    tipo character varying,
+    fecha_desembolso character varying,
+    fecha_ult_pago character varying,
+    dias_pagos character varying,
+    vr_negocio numeric,
+    valor_factura numeric,
+    valor_saldo numeric,
+    porcetaje numeric,
+    altura_mora_maxima character varying,
+    altura_mora_actual character varying,
+    valor_preaprobado numeric,
+    responsable_cuenta character varying,
+    cuotas_xpagar integer,
+    cuotas_pagadas integer,
+    cuota_actual integer,
+    porcentaje_cuotas numeric,
+    periodo_ultimo_pago character varying,
+    cuota_mora_maxima integer,
+    periodo_ultima_cuota character varying,
+    altura_mora_ultima_cuota character varying);
+ALTER TYPE dv_rs_preaprobado
+  OWNER TO postgres;

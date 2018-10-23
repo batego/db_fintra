@@ -1,0 +1,22 @@
+CREATE TABLE administrativo.nueva_configuracion_poliza (
+		id                SERIAL UNIQUE,
+		reg_status        CHARACTER(1) NOT NULL         DEFAULT '' :: CHARACTER VARYING,
+		dstrct            VARCHAR(4)   NOT NULL         DEFAULT '' :: CHARACTER VARYING,
+		id_poliza         INTEGER      NOT NULL,
+		id_aseguradora    INTEGER      NOT NULL,
+		id_valor_poliza   INTEGER      NOT NULL,
+		id_tipo_cobro     INTEGER      NOT NULL,
+		id_unidad_negocio INTEGER      NOT NULL,
+		id_sucursal       INTEGER      NOT NULL,
+		creation_date     TIMESTAMP WITHOUT TIME ZONE   DEFAULT current_timestamp,
+		last_update       TIMESTAMP WITHOUT TIME ZONE   DEFAULT current_timestamp,
+		creation_user     VARCHAR(10)  NOT NULL,
+		last_user_update  VARCHAR(10),
+		CONSTRAINT poliza_fk FOREIGN KEY (id_poliza) REFERENCES administrativo.nuevas_polizas (id),
+		CONSTRAINT aseguradora_fk FOREIGN KEY (id_aseguradora) REFERENCES administrativo.aseguradoras (id),
+		CONSTRAINT valor_plazo_fk FOREIGN KEY (id_valor_poliza) REFERENCES administrativo.tipo_valor_poliza (id),
+		CONSTRAINT tipo_cobro_fk FOREIGN KEY (id_tipo_cobro) REFERENCES administrativo.tipo_cobro (id),
+		CONSTRAINT unidad_negocio_fk FOREIGN KEY (id_unidad_negocio) REFERENCES unidad_negocio (id),
+		CONSTRAINT sucursal_fk FOREIGN KEY (id_sucursal) REFERENCES sucursales (id),
+		CONSTRAINT configuracion_poliza_fk PRIMARY KEY (id_poliza, id_aseguradora, id_unidad_negocio, id_sucursal)
+);

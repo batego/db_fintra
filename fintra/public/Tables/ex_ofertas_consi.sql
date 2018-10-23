@@ -1,0 +1,24 @@
+-- Table: ex_ofertas_consi
+
+-- DROP TABLE ex_ofertas_consi;
+
+CREATE TABLE ex_ofertas_consi
+(
+  id_solicitud character varying(15) NOT NULL,
+  id_consideracion integer NOT NULL DEFAULT nextval('ofertas_consi_id_consideracion_seq'::regclass),
+  reg_status character varying(1) NOT NULL DEFAULT ' '::character varying,
+  last_update timestamp without time zone NOT NULL DEFAULT now(),
+  user_update character varying(10) NOT NULL DEFAULT ' '::character varying,
+  creation_date timestamp without time zone NOT NULL DEFAULT now(),
+  creation_user character varying(10) NOT NULL DEFAULT ' '::character varying,
+  num_consideracion character varying(3) NOT NULL,
+  dstrct character varying(4) NOT NULL DEFAULT ''::character varying
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE ex_ofertas_consi
+  OWNER TO postgres;
+GRANT ALL ON TABLE ex_ofertas_consi TO postgres;
+GRANT SELECT ON TABLE ex_ofertas_consi TO msoto;
+

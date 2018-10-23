@@ -1,0 +1,13 @@
+--Realizar alter table tabla convenios fintra/public/Tables/convenios.sql linea 136
+
+--Realizar alter table  en la tabla detalle poliza_negocios fintra/public/Tables/detalle_poliza_negocio.sql linea 12
+
+--Realizar alter table en la tabla document_neg_aceptados fintra/public/Tables/documentos_neg_aceptado.sql linea 66
+
+--Realizar alter table en la tabla negocios fintra/public/Tables/Negocios.sql linea 210
+
+--Copilar las funciones: 
+fintra/public/Functions/518-fn_liquidar_polizas_seguro.sql
+fintra/public/Functions/519-fn_generar_nc_polizas.sql
+fintra/public/Functions/520-fn_generar_cxps_polizas.sql
+fintra/public/Functions/521-fn_generar_cxp_a_polizas.sql 
